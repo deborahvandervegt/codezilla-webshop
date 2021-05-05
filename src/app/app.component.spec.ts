@@ -1,11 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
+import { ProductOverviewComponent } from './product-overview/product-overview.component';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        ProductOverviewComponent
+      ],
+      imports: [
+        MatToolbarModule
       ],
     }).compileComponents();
   });
@@ -26,6 +34,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('codezilla-webshop app is running!');
+    expect(compiled.querySelector('span').textContent).toContain('Codezilla Webshop');
   });
 });
